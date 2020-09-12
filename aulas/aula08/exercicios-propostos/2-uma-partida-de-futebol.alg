@@ -1,10 +1,11 @@
 algoritmo "Uma partida de futebol"
-// Função : Avaliar uma partida de futebol de acordo com o número de gols de cada time.
+// FunÃ§Ã£o : Avaliar uma partida de futebol de acordo com o nÃºmero de gols de cada time.
 // Autor : Soryu Yamato.
 // Data : 9/12/2020
 var
 
    golsBangu,golsMadureira,totalGolsDaPartida:Inteiro
+   
 inicio
 
       Escreval("  BANGU X MADUREIRA  ")
@@ -19,7 +20,7 @@ inicio
            totalGolsDaPartida <- golsMadureira - golsBangu
       FimSe
       Escreval("---------------------------")
-      Escreval("Diferença: ",totalGolsDaPartida)
+      Escreval("DiferenÃ§a: ",totalGolsDaPartida)
       Escreva("Status: ")
       Escolha totalGolsDaPartida
           Caso 0
