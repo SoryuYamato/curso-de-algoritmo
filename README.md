@@ -8,4 +8,4 @@ Link da playlist do curso de algoritmo:
 
 [![Introdução a Algoritmos - Curso de Algoritmos #01 - Gustavo Guanabara](http://img.youtube.com/vi/8mei6uVttho/0.jpg)](http://www.youtube.com/watch?v=8mei6uVttho "Vídeo de introdução ao curso de algoritmo.")
 
-Meu progresso do curso: 66% (atualizado em 9/15/2020).
+Meu progresso do curso: 72% (atualizado em 9/16/2020).
