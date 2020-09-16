@@ -6,7 +6,15 @@ var
 
    numero:Inteiro
    resultado:Caractere
-   Funcao parOuImpar
+   Funcao parOuImpar(valor:Inteiro):Caractere
+   Inicio
+   
+         Se (valor%2=0)entao
+            Retorne "PAR"
+         Senao
+              Retorne "ÍMPAR"
+         FimSe
+   FimFuncao
    
 inicio
 
