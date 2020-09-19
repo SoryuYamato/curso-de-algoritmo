@@ -3,50 +3,47 @@ Algoritmo "Corrigindo Provas"
 // Autor(a)    : Soryu Yamato.
 // Data atual  : 9/17/2020
 Var
-
-   contador:Inteiro
-   gabaritoProfessor:Vetor[1..5] de Caractere
-   gabaritoAlunos:Vetor[1..5] de Caractere
-   nomesAlunos:Vetor[1..3] de Caractere
-   notasAlunos:Vetor[1..3] de Real
-   soma:Real
-   media:Vetor[1..3] de Real
-   
+   Gab: Vetor[1..5] de caractere
+   Nome: Vetor[1..3] de caractere
+   NQ: Vetor[1..5] de caractere
+   NA: Vetor[1..3] de Real
+   Soma: Real
+   i, j: inteiro
 Inicio
-
-     Escreval("-----------------------------")
-     Escreval("    CADRASTRO DE GABARITO    ")
-     Escreval("-----------------------------")
-     Para contador <- 1 ate 5 faca
-          Escreva("Digite a ",contador,"ª questão: ")
-          Leia(gabaritoProfessor[contador])
-     FimPara
-     LimpaTela
-     soma <- 0
-     Para contador <- 1 ate 3 faca
-     Escreval("-------------------------------")
-     Escreval("    CADRASTRO PROVAS ALUNOS    ")
-     Escreval("-------------------------------")
-          Escreva("Digite o nome do aluno(a): ")
-          Leia(nomesAlunos[contador])
-          Para contador <- 1 ate 5 faca
-               Escreva("Digite a ",contador,"ª questão: ")
-               Leia(gabaritoAlunos[contador])
-               FimPara
-               LimpaTela
-          FimPara
-          Para contador <- 1 ate 5 faca
-               Se (gabaritoAlunos[contador] = gabaritoProfessor[contador]) entao
-                  soma <- soma + 2
-                  Para contador <- 1 ate 3 faca
-                       notasAlunos[contador] <- soma
-                  FimPara
-               FimSe
-          FimPara
-          Escreval("--------------------")
-          Escreval("    NOTAS FINAIS    ")
-          Escreval("--------------------")
-          Para contador <- 1 ate 3 faca
-               Escreval("Nome do aluno(a): ",nomesAlunos[contador]," sua nota: ",notasAlunos[contador])
-          FimPara
+   EscrevaL("---------------------------------")
+   EscrevaL(" PASSO 1 - Cadastro de Gabarito  ")
+   EscrevaL("---------------------------------")
+   Para i <- 1 ate 5 faca
+      Escreva("Questão ", i, ": ")
+      Leia(Gab[i])
+   FimPara
+   LimpaTela
+   Para i <- 1 ate 3 faca
+      EscrevaL()
+      EscrevaL("           ALUNO ", i)
+      EscrevaL("---------------------------------")
+      Escreva("Nome: ")
+      Leia(Nome[i])
+      EscrevaL()
+      EscrevaL("    RESPOSTAS DADAS PELO ALUNO   ")
+      EscrevaL()
+      Para j <- 1 ate 5 faca
+         Escreva("Questão ", j, ": ")
+         Leia(NQ[j])
+         Se (NQ[j] = Gab[j]) entao
+            NA[i] <- NA[i] + 2
+         FimSe
+      FimPara
+      LimpaTela
+      Soma <- Soma + NA[i]
+   FimPara
+   LimpaTela
+   EscrevaL("          NOTAS FINAIS           ")
+   EscrevaL("---------------------------------")
+   Para i <- 1 ate 3 faca
+      EscrevaL(Nome[i]: 27, NA[i]:4:1)
+   FimPara
+   EscrevaL("---------------------------------")
+   EscrevaL("Média da Turma: ":27, Soma/3:4:1)
+   
 Fimalgoritmo
