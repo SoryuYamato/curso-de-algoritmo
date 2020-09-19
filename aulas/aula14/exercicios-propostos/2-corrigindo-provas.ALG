@@ -4,39 +4,49 @@ Algoritmo "Corrigindo Provas"
 // Data atual  : 9/17/2020
 Var
 
-   gabaritoProfessor:Vetor[1..5] de Caractere
    contador:Inteiro
-   nomeAlunos:Vetor[1..3] de Caractere
+   gabaritoProfessor:Vetor[1..5] de Caractere
    gabaritoAlunos:Vetor[1..5] de Caractere
-   notaAlunos:Vetor[1..5] de Real
+   nomesAlunos:Vetor[1..3] de Caractere
+   notasAlunos:Vetor[1..3] de Real
+   soma:Real
+   media:Vetor[1..3] de Real
    
 Inicio
 
-      Escreval("-----------------------------")
-      Escreval("    CADRASTRO DE GABARITO    ")
-      Escreval("-----------------------------")
-      Para contador <- 1 ate 5 faca
-           Escreva("Digite a resposta da ",contador,"° questão: ")
-           Leia(gabaritoProfessor[contador])
-      FimPara
-      LimpaTela
-      
-      Para contador <- 1 ate 3 faca
-           Escreval("----------------------------------------")
-           Escreval("         CADRASTRO ",contador,"º ALUNO(a).    ")
-           Escreval("----------------------------------------")
-           Escreva("Digite o nome do(a) aluno(a) : ")
-           Leia(nomeAlunos[contador])
-           Para contador <- 1 ate 5 faca
-                Escreva("Digite a resposta questão ",contador,"° : ")
-                Leia(gabaritoAlunos[contador])
-                Se (gabaritoAlunos[contador] = gabaritoProfessor[contador]) entao
-                   notaAlunos[contador] <- notaAlunos[contador] + 2
-                FimSe
-           FimPara
-           LimpaTela
-      Para contador <- 1 ate 3 faca
-           Escreval(nomeAlunos[contador],notasAlunos[contador])
-      FimPara
-      FimPara
+     Escreval("-----------------------------")
+     Escreval("    CADRASTRO DE GABARITO    ")
+     Escreval("-----------------------------")
+     Para contador <- 1 ate 5 faca
+          Escreva("Digite a ",contador,"ª questão: ")
+          Leia(gabaritoProfessor[contador])
+     FimPara
+     LimpaTela
+     soma <- 0
+     Para contador <- 1 ate 3 faca
+     Escreval("-------------------------------")
+     Escreval("    CADRASTRO PROVAS ALUNOS    ")
+     Escreval("-------------------------------")
+          Escreva("Digite o nome do aluno(a): ")
+          Leia(nomesAlunos[contador])
+          Para contador <- 1 ate 5 faca
+               Escreva("Digite a ",contador,"ª questão: ")
+               Leia(gabaritoAlunos[contador])
+               FimPara
+               LimpaTela
+          FimPara
+          Para contador <- 1 ate 5 faca
+               Se (gabaritoAlunos[contador] = gabaritoProfessor[contador]) entao
+                  soma <- soma + 2
+                  Para contador <- 1 ate 3 faca
+                       notasAlunos[contador] <- soma
+                  FimPara
+               FimSe
+          FimPara
+          Escreval("--------------------")
+          Escreval("    NOTAS FINAIS    ")
+          Escreval("--------------------")
+          Para contador <- 1 ate 3 faca
+               Escreval("Nome do aluno(a): ",nomesAlunos[contador]," sua nota: ",notasAlunos[contador])
+          FimPara
 Fimalgoritmo
